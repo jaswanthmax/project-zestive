@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Movies from "./pages/Movies";
 import MovieDetails from "./pages/MovieDetail";
-import SeatSelection from "./pages/SeatSelection"; 
 import Events from "./pages/EventsPage"; // ✅ New Events page
 import EventDetails from "./pages/EventDetail"; // ✅ Event details page
 
@@ -27,9 +26,6 @@ function App() {
 
         {/* ✅ Movie details */}
         <Route path="/movie/:id" element={<MovieDetails />} />
-
-        {/* ✅ Seat Selection (with unique ID from localStorage) */}
-        <Route path="/seat-selection/:id" element={<SeatSelection />} />
 
         {/* ✅ Events listing */}
         <Route path="/events" element={<Events city={city} />} />
