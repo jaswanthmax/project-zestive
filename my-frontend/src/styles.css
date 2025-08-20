@@ -1,0 +1,93 @@
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.screen {
+  background: #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.seats {
+  display: inline-block;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #444;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.seat.selected {
+  background: green;
+  color: white;
+}
+
+.seat.booked {
+  background: rgb(77, 88, 91);
+  color: white;
+  cursor: not-allowed;
+}
+
+.proceed-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Payment Page */
+.payment-container {
+  max-width: 400px;
+  margin: 30px auto;
+  text-align: left;
+  padding: 20px;
+}
+
+.payment-box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 10px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

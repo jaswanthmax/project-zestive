@@ -1,0 +1,47 @@
+/* Now Showing section */
+.now-showing-section {
+  padding: 40px 60px;
+  background-color: #fff;
+}
+
+.now-showing-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+/* Movie cards container */
+.movie-list {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Individual card */
+.movie-card {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Movie poster */
+.movie-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Movie title */
+.movie-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 12px 0 4px;
+}
+
+/* Movie meta info */
+.movie-meta {
+  font-size: 14px;
+  color: #666;
+}
