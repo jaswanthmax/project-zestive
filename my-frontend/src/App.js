@@ -3,20 +3,16 @@ import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Movies from "./pages/Movies";
-import MovieDetails from "./pages/MovieDetail";
-import Events from "./pages/EventsPage"; // ✅ New Events page
-import EventDetails from "./pages/EventDetail"; // ✅ Event details page
+import MovieDetails from "./pages/MovieDetails";   // ✅ fixed name
+import Events from "./pages/Events";              // ✅ fixed name
+import EventDetails from "./pages/EventDetails";  // ✅ fixed name
 
 function App() {
   const [city, setCity] = useState("Chennai"); // Default city
 
   return (
     <Router>
-      <Navbar city={city} setCity={setCity} /> {/* Passing city and setCity to Navbar */}
-
-      <main style={{ padding: "20px" }}>
-        <h1>Welcome to {city}</h1>
-      </main>
+      <Navbar city={city} setCity={setCity} />
 
       <Routes>
         {/* ✅ Movies listing */}
