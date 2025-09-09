@@ -1,0 +1,144 @@
+/* Define Light and Dark Theme */
+:root {
+  /* Light Theme Colors */
+  --bg-color-light: #ffffff;
+  --card-bg-light: #fff;
+  --card-shadow-light: rgba(0, 0, 0, 0.1);
+  --text-color-light: #222;
+  --sub-info-light: gray;
+  --button-bg-light: #e9ebee;
+  --button-text-light: #000;
+  --button-active-bg-light: #000;
+  --button-active-text-light: #fff;
+  
+  /* Dark Theme Colors */
+  --bg-color-dark: #1e1e1e;
+  --card-bg-dark: #333333;
+  --card-shadow-dark: rgba(255, 255, 255, 0.1);
+  --text-color-dark: #fff;
+  --sub-info-dark: #bbb;
+  --button-bg-dark: #444;
+  --button-text-dark: #fff;
+  --button-active-bg-dark: #000;
+  --button-active-text-dark: #fff;
+}
+
+/* Apply light theme */
+[data-theme="light"] {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+[data-theme="dark"] {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* History Page Container */
+.history-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* History List */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* History Card */
+.history-card {
+  background: var(--card-bg-light); /* Default light theme */
+  border-radius: 12px;
+  box-shadow: 0 0 10px var(--card-shadow-light); /* Default light shadow */
+  padding: 1.5rem;
+}
+
+[data-theme="dark"] .history-card {
+  background: var(--card-bg-dark); /* Dark theme */
+  box-shadow: 0 0 10px var(--card-shadow-dark); /* Dark theme shadow */
+}
+
+/* History Header */
+.history-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.poster {
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Booking Info */
+.booking-info h3 {
+  margin: 0;
+}
+
+.sub-info {
+  color: var(--sub-info-light); /* Default light theme */
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .sub-info {
+  color: var(--sub-info-dark); /* Dark theme */
+}
+
+/* QR Section */
+.qr-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+/* History Tabs */
+.history-tabs {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  background-color: var(--button-bg-light); /* Default light theme */
+  padding: 6px;
+  border-radius: 999px;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[data-theme="dark"] .history-tabs {
+  background-color: var(--button-bg-dark); /* Dark theme */
+}
+
+.history-tabs button {
+  border: none;
+  background: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 999px;
+  color: var(--button-text-light); /* Default light theme */
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+[data-theme="dark"] .history-tabs button {
+  color: var(--button-text-dark); /* Dark theme */
+}
+
+.history-tabs button.active {
+  background-color: var(--button-active-bg-light); /* Default light theme */
+  color: var(--button-active-text-light); /* Default light theme */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .history-tabs button.active {
+  background-color: var(--button-active-bg-dark); /* Dark theme */
+  color: var(--button-active-text-dark); /* Dark theme */
+}

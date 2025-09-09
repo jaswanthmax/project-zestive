@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getEvents } from "../utils/events";
-import "../styles/EventDetails.css"; // create this for styling
+import "../styles/EventDetails.css";
 
 const EventDetailsPage = () => {
-  const { id } = useParams(); // get event ID from URL
+  const { id } = useParams();
   const navigate = useNavigate();
   const [event, setEvent] = useState(null);
   const [numTickets, setNumTickets] = useState(0);
@@ -12,43 +12,54 @@ const EventDetailsPage = () => {
 
   useEffect(() => {
     const events = getEvents();
-    const foundEvent = events.find((e) => e.id === parseInt(id));
+
+    // ✅ Match event by id (handles both string/number ids)
+    const foundEvent = events.find((e) => String(e.id) === String(id));
+
     if (foundEvent) {
       setEvent(foundEvent);
     }
   }, [id]);
 
+  // ✅ Parse price into number (ignores "₹" or extra text like "per ticket")
+  const getPrice = () => {
+    if (!event?.price) return 0;
+    const match = event.price.toString().match(/\d+/g);
+    return match ? parseInt(match.join(""), 10) : 0;
+  };
+
   const decrement = () => {
     if (numTickets > 0) {
-      setNumTickets(numTickets - 1);
-      setTotal((numTickets - 1) * parseInt(event.price.replace(/\D/g, "")));
+      const updated = numTickets - 1;
+      setNumTickets(updated);
+      setTotal(updated * getPrice());
     }
   };
-  const increment = () => {
-  if (numTickets < 6) {
-    setNumTickets(numTickets + 1);
-    setTotal((numTickets + 1) * parseInt(event.price.replace(/\D/g, "")));
-  } else {
-    alert("⚠️ You can only book up to 6 tickets!");
-  }
-};
 
+  const increment = () => {
+    if (numTickets < 6) {
+      const updated = numTickets + 1;
+      setNumTickets(updated);
+      setTotal(updated * getPrice());
+    } else {
+      alert("⚠️ You can only book up to 6 tickets!");
+    }
+  };
 
   const handleBooking = () => {
-    const booking = {
-      eventId: event.id,
-      title: event.title,
-      venue: event.venue,
-      image: event.image,
-      tickets: numTickets,
-      totalAmount: total,
-    };
+    if (numTickets === 0) {
+      alert("Please select at least 1 ticket.");
+      return;
+    }
 
-    // Save booking to localStorage with event ID as key
-    localStorage.setItem(`booking_${event.id}`, JSON.stringify(booking));
-
-    alert("✅ Booking saved!");
-    navigate("/events"); // redirect back to events page or bookings page
+    navigate("/payment", {
+      state: {
+        type: "event",
+        event,
+        tickets: numTickets,
+        total,
+      },
+    });
   };
 
   if (!event) return <h2>Event not found</h2>;
@@ -57,10 +68,11 @@ const EventDetailsPage = () => {
     <div className="event-details-s">
       <img src={event.image2} alt={event.title} className="event-banner" />
       <h2>{event.title}</h2>
-      <p>{event.date}</p>
-      <p>{event.venue}</p>
-      <p className="price">Price: {event.price}</p>
+      <p><strong>Date:</strong> {event.date}</p>
+      <p><strong>Venue:</strong> {event.venue}</p>
+      <p className="price"><strong>Price:</strong> {event.price}</p>
 
+      {/* Ticket Counter */}
       <div className="ticket-counter">
         <button onClick={decrement}>-</button>
         <span>{numTickets}</span>
@@ -69,10 +81,9 @@ const EventDetailsPage = () => {
 
       <h3>Total: ₹{total}</h3>
 
-      <button 
-        onClick={handleBooking} 
-
-        disabled={numTickets === 0} 
+      <button
+        onClick={handleBooking}
+        disabled={numTickets === 0}
         className="book-btn"
       >
         Confirm Booking

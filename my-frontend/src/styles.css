@@ -1,3 +1,43 @@
+/* Define Light and Dark Theme */
+:root {
+  /* Light Theme Colors */
+  --bg-color-light: #ffffff;
+  --text-color-light: #000;
+  --seat-bg-light: #ddd;
+  --seat-hover-light: #bbb;
+  --seat-selected-light: green;
+  --seat-booked-light: rgb(77, 88, 91);
+  --button-bg-light: #007bff;
+  --button-text-light: white;
+  --input-bg-light: #fff;
+  --input-border-light: #ccc;
+
+  /* Dark Theme Colors */
+  --bg-color-dark: #1e1e1e;
+  --text-color-dark: #fff;
+  --seat-bg-dark: #444;
+  --seat-hover-dark: #555;
+  --seat-selected-dark: #4CAF50;
+  --seat-booked-dark: rgb(77, 88, 91);
+  --button-bg-dark: #007bff;
+  --button-text-dark: white;
+  --input-bg-dark: #333;
+  --input-border-dark: #666;
+}
+
+/* Apply Light Theme by Default */
+[data-theme="light"] {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+/* Apply Dark Theme */
+[data-theme="dark"] {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Seat Selection Page Styles */
 .container {
   text-align: center;
   padding: 20px;
@@ -9,10 +49,14 @@
 }
 
 .screen {
-  background: #ddd;
+  background: var(--seat-bg-light); /* Default light theme */
   padding: 10px;
   margin-bottom: 20px;
   font-weight: bold;
+}
+
+[data-theme="dark"] .screen {
+  background: var(--seat-bg-dark); /* Dark theme */
 }
 
 .seats {
@@ -35,30 +79,52 @@
   border: 1px solid #444;
   border-radius: 5px;
   cursor: pointer;
+  background: var(--seat-bg-light); /* Default light theme */
+}
+
+[data-theme="dark"] .seat {
+  background: var(--seat-bg-dark); /* Dark theme */
 }
 
 .seat.selected {
-  background: green;
-  color: white;
+  background: var(--seat-selected-light); /* Default light theme */
+  color: var(--button-text-light); /* White text */
+}
+
+[data-theme="dark"] .seat.selected {
+  background: var(--seat-selected-dark); /* Dark theme */
+  color: var(--button-text-dark); /* White text */
 }
 
 .seat.booked {
-  background: rgb(77, 88, 91);
-  color: white;
+  background: var(--seat-booked-light); /* Default light theme */
+  color: var(--button-text-light); /* White text */
   cursor: not-allowed;
 }
 
-.proceed-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+[data-theme="dark"] .seat.booked {
+  background: var(--seat-booked-dark); /* Dark theme */
+  color: var(--button-text-dark); /* White text */
 }
 
-/* Payment Page */
+.proceed-btn {
+  background: var(--button-bg-light); /* Default light theme */
+  color: var(--button-text-light);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: 0.3s;
+  margin-bottom: 80px;
+}
+
+[data-theme="dark"] .proceed-btn {
+  background: var(--button-bg-dark); /* Dark theme */
+  color: var(--button-text-dark);
+}
+
+/* Payment Page Styles */
 .payment-container {
   max-width: 400px;
   margin: 30px auto;
@@ -67,9 +133,13 @@
 }
 
 .payment-box {
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border-light); /* Default light theme */
   border-radius: 10px;
   padding: 20px;
+}
+
+[data-theme="dark"] .payment-box {
+  border: 1px solid var(--input-border-dark); /* Dark theme border */
 }
 
 .form-group {
@@ -80,14 +150,26 @@
   width: 100%;
   padding: 8px;
   margin-top: 5px;
+  background: var(--input-bg-light); /* Default light theme */
+  border: 1px solid var(--input-border-light); /* Default light theme */
+}
+
+[data-theme="dark"] .form-group input {
+  background: var(--input-bg-dark); /* Dark theme */
+  border: 1px solid var(--input-border-dark); /* Dark theme */
 }
 
 .pay-btn {
   width: 100%;
   padding: 10px;
-  background: green;
-  color: white;
+  background: var(--seat-selected-light); /* Default light theme */
+  color: var(--button-text-light);
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+[data-theme="dark"] .pay-btn {
+  background: var(--seat-selected-dark); /* Dark theme */
+  color: var(--button-text-dark);
 }

@@ -1,10 +1,27 @@
-/* src/styles/Footer.css */
+/* Define Light and Dark Theme */
+:root {
+  /* Light Theme Colors */
+  --footer-bg-light: #222;
+  --footer-text-light: #ffffff;
+
+  /* Dark Theme Colors */
+  --footer-bg-dark: #333;
+  --footer-text-dark: #ffffff;
+}
+
+/* Footer Styling */
 .footer {
-  background-color: #222;
-  color: white;
+  background-color: var(--footer-bg-light); /* Default to light theme */
+  color: var(--footer-text-light); /* Default to light theme */
   padding: 15px;
   text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/* Apply Dark Theme */
+[data-theme="dark"] .footer {
+  background-color: var(--footer-bg-dark); /* Dark theme background */
+  color: var(--footer-text-dark); /* Dark theme text color */
 }

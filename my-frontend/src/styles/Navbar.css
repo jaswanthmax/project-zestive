@@ -1,25 +1,72 @@
-/* Navbar.css */
+/* Define Light and Dark Theme */
+:root {
+  /* Light Theme Colors */
+  --bg-color-light: #ffffff;
+  --text-color-light: #222;
+  --navbar-bg-light: #fff;
+  --navbar-border-light: #ddd;
+  --navbar-link-light: #333;
+  --search-bar-bg-light: #f9f9f9;
+  --search-bar-border-light: #ccc;
+  --search-bar-text-light: #333;
+  --button-bg-light: #f44336;
+  --button-text-light: #fff;
+  --button-hover-light: #b91c1c;
 
+  /* Dark Theme Colors */
+  --bg-color-dark: #1e1e1e;
+  --text-color-dark: #fff;
+  --navbar-bg-dark: #333;
+  --navbar-border-dark: #555;
+  --navbar-link-dark: #fff;
+  --search-bar-bg-dark: #444;
+  --search-bar-border-dark: #666;
+  --search-bar-text-dark: #fff;
+  --button-bg-dark: #f44336;
+  --button-text-dark: #fff;
+  --button-hover-dark: #b91c1c;
+}
+
+/* Apply light theme */
+[data-theme="light"] {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+[data-theme="dark"] {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  background-color: var(--navbar-bg-light); /* Default to light theme */
+  border-bottom: 1px solid var(--navbar-border-light); /* Default to light theme */
   align-items: center;
   font-family: Arial, sans-serif;
 }
 
+[data-theme="dark"] .navbar {
+  background-color: var(--navbar-bg-dark); /* Dark theme */
+  border-bottom: 1px solid var(--navbar-border-dark); /* Dark theme */
+}
+
+/* Logo */
 .logo {
   height: 40px;
   margin-right: 20px;
 }
 
+/* Navbar Left */
 .navbar-left {
   display: flex;
   align-items: center;
 }
 
+/* Location */
 .location {
   display: flex;
   align-items: center;
@@ -29,13 +76,18 @@
 
 .location-icon {
   margin-right: 8px;
-  color: #f44336;
+  color: var(--button-bg-light); /* Default to light theme */
+}
+
+[data-theme="dark"] .location-icon {
+  color: var(--button-bg-dark); /* Dark theme */
 }
 
 .city {
   font-weight: bold;
 }
 
+/* Navbar Menu */
 .menu {
   display: flex;
   gap: 20px;
@@ -43,23 +95,29 @@
 
 .menu-link {
   text-decoration: none;
-  color: #333;
+  color: var(--navbar-link-light); /* Default to light theme */
   font-weight: 500;
 }
 
+[data-theme="dark"] .menu-link {
+  color: var(--navbar-link-dark); /* Dark theme */
+}
+
+/* Navbar Right */
 .navbar-right {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
+/* Search Bar */
 .search-bar {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid var(--search-bar-border-light); /* Default to light theme */
   padding: 6px 10px;
   border-radius: 20px;
-  background: #f9f9f9;
+  background: var(--search-bar-bg-light); /* Default to light theme */
 }
 
 .search-bar input {
@@ -67,13 +125,25 @@
   background: transparent;
   outline: none;
   margin-left: 8px;
+  color: var(--search-bar-text-light); /* Default to light theme */
 }
 
+[data-theme="dark"] .search-bar {
+  border: 1px solid var(--search-bar-border-dark); /* Dark theme border */
+  background: var(--search-bar-bg-dark); /* Dark theme background */
+}
+
+[data-theme="dark"] .search-bar input {
+  color: var(--search-bar-text-dark); /* Dark theme text color */
+}
+
+/* Profile Icon */
 .profile {
   cursor: pointer;
   font-size: 20px;
 }
 
+/* Popup Overlay */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -87,8 +157,9 @@
   z-index: 999;
 }
 
+/* Popup Card */
 .popup-card {
-  background: #fff;
+  background: var(--navbar-bg-light); /* Default to light theme */
   padding: 30px;
   width: 400px;
   max-width: 90%;
@@ -96,6 +167,11 @@
   position: relative;
 }
 
+[data-theme="dark"] .popup-card {
+  background: var(--navbar-bg-dark); /* Dark theme */
+}
+
+/* Close Button */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -106,20 +182,27 @@
   cursor: pointer;
 }
 
+/* Location Search */
 .location-search {
   width: 100%;
   padding: 10px;
   margin: 15px 0;
-  border: 1px solid #ccc;
+  border: 1px solid var(--search-bar-border-light); /* Default to light theme */
   border-radius: 8px;
 }
 
+[data-theme="dark"] .location-search {
+  border: 1px solid var(--search-bar-border-dark); /* Dark theme border */
+}
+
+/* City Grid */
 .city-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
+/* City Card */
 .city-card {
   padding: 12px;
   border: 1px solid #ddd;
@@ -130,17 +213,128 @@
 }
 
 .city-card:hover {
-  background: #f44336;
-  color: white;
+  background: var(--button-bg-light); /* Default light theme */
+  color: var(--button-text-light); /* Default light theme */
 }
 
+[data-theme="dark"] .city-card:hover {
+  background: var(--button-bg-dark); /* Dark theme */
+  color: var(--button-text-dark); /* Dark theme */
+}
+
+/* Continue Button */
 .continue-btn {
   margin-top: 15px;
   width: 100%;
   padding: 10px;
-  background: #f44336;
-  color: white;
+  background: var(--button-bg-light); /* Default to light theme */
+  color: var(--button-text-light); /* Default to light theme */
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+
+[data-theme="dark"] .continue-btn {
+  background: var(--button-bg-dark); /* Dark theme */
+  color: var(--button-text-dark); /* Dark theme */
+}
+
+/* Profile Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Profile Card */
+.popup-card {
+  background-color: var(--navbar-bg-light); /* Default to light theme */
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .popup-card {
+  background-color: var(--navbar-bg-dark); /* Dark theme */
+}
+
+/* Profile Info */
+.profile-info {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  background-color: #c6a7f5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+/* Profile Details */
+.profile-details {
+  text-align: center;
+}
+
+/* Popup Button */
+.popup-btn {
+  padding: 12px 20px;
+  border: none;
+  background-color: var(--button-bg-light); /* Default to light theme */
+  color: var(--button-text-light); /* Default to light theme */
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.popup-btn:hover {
+  background-color: #333;
+}
+
+[data-theme="dark"] .popup-btn {
+  background-color: var(--button-bg-dark); /* Dark theme */
+  color: var(--button-text-dark); /* Dark theme */
+}
+
+[data-theme="dark"] .popup-btn:hover {
+  background-color: #222;
+}
+
+/* Support Section */
+.support-section,
+.more-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.more-section button {
+  margin-top: 10px;
 }

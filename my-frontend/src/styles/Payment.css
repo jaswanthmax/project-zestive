@@ -1,0 +1,298 @@
+/* Define Light and Dark Theme */
+:root {
+  /* Light Theme Colors */
+  --bg-color-light: #f5f5f5;
+  --text-color-light: #111;
+  --card-bg-light: #fff;
+  --card-border-light: #eee;
+  --card-shadow-light: rgba(0, 0, 0, 0.1);
+  --button-bg-light: #f44336;
+  --button-text-light: #fff;
+  --button-hover-light: #b91c1c;
+  --input-bg-light: #fafafa;
+  --input-border-light: #ddd;
+  --input-text-light: #333;
+
+  /* Dark Theme Colors */
+  --bg-color-dark: #1e1e1e;
+  --text-color-dark: #fff;
+  --card-bg-dark: #333;
+  --card-border-dark: #555;
+  --card-shadow-dark: rgba(255, 255, 255, 0.1);
+  --button-bg-dark: #f44336;
+  --button-text-dark: #fff;
+  --button-hover-dark: #b91c1c;
+  --input-bg-dark: #444;
+  --input-border-dark: #666;
+  --input-text-dark: #fff;
+}
+
+/* Apply light theme */
+[data-theme="light"] {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+[data-theme="dark"] {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Payment Page */
+.payment-page {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Left Section */
+.payment-left {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Movie Details */
+.movie-details {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.movie-poster {
+  width: 200px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.movie-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.movie-info p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Ticket Details */
+.ticket-details {
+  background: var(--card-bg-light); /* Default light theme */
+  border: 1px solid var(--card-border-light); /* Default light theme */
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .ticket-details {
+  background: var(--card-bg-dark); /* Dark theme */
+  border: 1px solid var(--card-border-dark); /* Dark theme */
+}
+
+/* Refund Note */
+.refund-note {
+  background: #fafafa;
+  border: 1px solid var(--card-border-light); /* Default light theme */
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+[data-theme="dark"] .refund-note {
+  background: #333; /* Dark theme */
+  border: 1px solid var(--card-border-dark); /* Dark theme */
+  color: #bbb; /* Dark theme text color */
+}
+
+/* Offers */
+.offers {
+  border: 1px solid var(--card-border-light); /* Default light theme */
+  border-radius: 8px;
+  background: var(--card-bg-light); /* Default light theme */
+  padding: 15px;
+}
+
+[data-theme="dark"] .offers {
+  border: 1px solid var(--card-border-dark); /* Dark theme */
+  background: var(--card-bg-dark); /* Dark theme */
+}
+
+/* Offer Button */
+.offer-btn {
+  background: none;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-color-light); /* Default light theme */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+[data-theme="dark"] .offer-btn {
+  color: var(--text-color-dark); /* Dark theme */
+}
+
+/* Right Section */
+.payment-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Payment Summary */
+.summary-card {
+  background: var(--card-bg-light); /* Default light theme */
+  border: 1px solid var(--card-border-light); /* Default light theme */
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 14px;
+}
+
+[data-theme="dark"] .summary-card {
+  background: var(--card-bg-dark); /* Dark theme */
+  border: 1px solid var(--card-border-dark); /* Dark theme */
+}
+
+/* User Details */
+.details-card {
+  background: var(--card-bg-light); /* Default light theme */
+  border: 1px solid var(--card-border-light); /* Default light theme */
+  border-radius: 8px;
+  padding: 15px;
+}
+
+[data-theme="dark"] .details-card {
+  background: var(--card-bg-dark); /* Dark theme */
+  border: 1px solid var(--card-border-dark); /* Dark theme */
+}
+
+/* Input Fields */
+.details-card input {
+  padding: 10px;
+  border: 1px solid var(--input-border-light); /* Default light theme */
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--input-bg-light); /* Default light theme */
+  color: var(--input-text-light); /* Default light theme */
+}
+
+[data-theme="dark"] .details-card input {
+  border: 1px solid var(--input-border-dark); /* Dark theme border */
+  background: var(--input-bg-dark); /* Dark theme background */
+  color: var(--input-text-dark); /* Dark theme text */
+}
+
+/* Pay Button */
+.pay-btn {
+  background: var(--button-bg-light); /* Default light theme */
+  color: var(--button-text-light); /* Default light theme */
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .pay-btn {
+  background: var(--button-bg-dark); /* Dark theme */
+  color: var(--button-text-dark); /* Dark theme */
+}
+
+.pay-btn:hover {
+  opacity: 0.9;
+}
+
+/* Error Message */
+.error {
+  margin-top: 10px;
+  color: red;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Offer Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: var(--card-bg-light); /* Default light theme */
+  padding: 25px;
+  border-radius: 12px;
+  width: 380px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .popup-box {
+  background: var(--card-bg-dark); /* Dark theme */
+}
+
+.popup-box h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.popup-box input {
+  padding: 10px;
+  width: 85%;
+  margin-bottom: 15px;
+  border: 1px solid var(--input-border-light); /* Default light theme */
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+[data-theme="dark"] .popup-box input {
+  border: 1px solid var(--input-border-dark); /* Dark theme border */
+}
+
+/* Popup Buttons */
+.apply-btn,
+.close-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.apply-btn {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.close-btn {
+  background: #d32f2f;
+  color: #fff;
+}
+
+[data-theme="dark"] .apply-btn {
+  background: #388e3c;
+}
+
+[data-theme="dark"] .close-btn {
+  background: #c62828;
+}

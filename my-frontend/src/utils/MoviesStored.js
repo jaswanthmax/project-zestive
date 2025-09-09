@@ -6,7 +6,7 @@ const movies = [
     image: "/images/Coolie_2_Poster-33dfdd70-71f9-11f0-8de0-9d1c38983d05.avif",
     rating: "A | 2hrs 50min",
     languages: ["Tamil","Telugu"],
-    cities: ["Chennai","Goa" ,"Hyderabad"],
+    cities: ["Chennai","Goa" ,],
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const movies = [
     image: "/poster/Mahavatar-Narsimha/Mahavatar-Narsimha--Poster-742abd40-d7c2-11ef-83bf-1dede4761f84.avif",
     rating: "UA13+ | 2hrs 11min",
     languages: ["Tamil", "and 2 more"],
-    cities: ["Mumbai"],
+    cities: ["chennai"],
   },
   {
     id: 4,
@@ -38,14 +38,14 @@ const movies = [
     image: "/poster/War/WAR2_Poster-e318ca10-6225-11f0-a47d-892349f87030.avif",
     rating: "UA16+ | 2hrs 52min",
     languages: ["Tamil","Telugu","Hindi"],
-    cities: ["Mumbai"],
+    cities: ["chennai"],
   },
   {
     id: 6,
-    title: "How Train Your Dragon",
-    image: "/images/HTYD6-.avif",
-    rating: "UA7+",
-    languages: ["English"],
+    title: "Lokah Chapter1 : Chandra",
+    image: "/images/Lokah2-9e449270-83c7-11f0-8765-35f6bb2b061d.jpg",
+    rating: "UA16+ | 2hrs 31min",
+    languages: ["Tamil"],
     cities: ["Chennai", "Mumbai"],
   },
   {
@@ -54,7 +54,7 @@ const movies = [
     image: "/images/jonwick.avif",
     rating: "A",
     languages: ["Telugu", "and 1 more"],
-    cities: ["Chennai","Goa"],
+    cities: ["Hyderabad","Goa"],
   },
   {
     id: 8,
@@ -135,7 +135,7 @@ const movies = [
     image: "/images/poster_0013_Kannapa4.avif",
     rating: "UA13+",
     languages: ["Telugu", "Tamil"],
-    cities: ["Chennai","Goa"],
+    cities: ["Goa"],
   },
   {
     id: 18,

@@ -1,11 +1,47 @@
-/* Multiple.css */
+/* Define Light and Dark Theme */
+:root {
+  /* Light Theme Colors */
+  --bg-color-light: #f5f5f5;
+  --text-color-light: #222;
+  --seat-bg-light: #ddd;
+  --seat-hover-light: #bbb;
+  --seat-selected-light: #4caf50;
+  --seat-text-light: #fff;
+  --screen-bg-light: #fff;
+  --screen-shadow-light: rgba(0, 0, 0, 0.1);
+  --button-bg-light: #007bff;
+  --button-text-light: #fff;
+
+  /* Dark Theme Colors */
+  --bg-color-dark: #1e1e1e;
+  --text-color-dark: #fff;
+  --seat-bg-dark: #444;
+  --seat-hover-dark: #555;
+  --seat-selected-dark: #4caf50;
+  --seat-text-dark: #fff;
+  --screen-bg-dark: #333;
+  --screen-shadow-dark: rgba(255, 255, 255, 0.1);
+  --button-bg-dark: #007bff;
+  --button-text-dark: #fff;
+}
+
+/* Apply light theme */
+[data-theme="light"] {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+[data-theme="dark"] {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
 
 /* Main App */
 .app {
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 20px;
-  background: #f5f5f5;
+  background: var(--bg-color-light); /* Default to light theme */
 }
 
 /* Dropdown */
@@ -19,12 +55,18 @@ select {
 
 /* Screen Box */
 .screen {
-  background: white;
+  background: var(--screen-bg-light); /* Default to light theme */
   padding: 20px;
   margin: 20px auto;
   max-width: 950px;
   border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 12px var(--screen-shadow-light); /* Default light shadow */
+}
+
+/* Dark theme screen box */
+[data-theme="dark"] .screen {
+  background: var(--screen-bg-dark); /* Dark theme background */
+  box-shadow: 0px 4px 12px var(--screen-shadow-dark); /* Dark theme shadow */
 }
 
 /* Seats Grid */
@@ -40,7 +82,7 @@ select {
 .seat {
   width: 30px;
   height: 30px;
-  background: #ddd;
+  background: var(--seat-bg-light); /* Default to light theme */
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -51,15 +93,30 @@ select {
   transition: background 0.3s ease;
 }
 
+/* Dark theme seat */
+[data-theme="dark"] .seat {
+  background: var(--seat-bg-dark); /* Dark theme */
+}
+
 /* Hover Effect */
 .seat:hover {
-  background: #bbb;
+  background: var(--seat-hover-light); /* Default light theme hover */
+}
+
+[data-theme="dark"] .seat:hover {
+  background: var(--seat-hover-dark); /* Dark theme hover */
 }
 
 /* Selected Seat */
 .seat.selected {
-  background: #4caf50;
-  color: white;
+  background: var(--seat-selected-light); /* Default light theme */
+  color: var(--seat-text-light); /* Default light theme */
+}
+
+/* Dark theme selected seat */
+[data-theme="dark"] .seat.selected {
+  background: var(--seat-selected-dark); /* Dark theme */
+  color: var(--seat-text-dark); /* Dark theme */
 }
 
 /* Total Price */
@@ -67,4 +124,5 @@ select {
   margin-top: 20px;
   font-size: 18px;
   font-weight: bold;
+  color: inherit; /* Inherit text color from the theme */
 }

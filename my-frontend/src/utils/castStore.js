@@ -12,7 +12,9 @@ const movieDetails = {
       { name:"soubin shahir",image:"/cast/soubin-shahir-63133110-6284-11ec-8882-372594f976ce.avif"},
       { name:"Shrutihasan",image:"/cast/Shrutihasan-bb38c4c0-7df6-11ed-bf27-a3e7fc56533c.avif"},
     ],
-    trailer: "/trailers/coolie-trailer.mp4", // Path to the trailer
+    trailers: [
+  { type: "youtube", url: "https://www.youtube.com/embed/qeVfT2iLiu0" }
+  ],
     genres: "Action, Thriller",  // Genres of the movie
     posters: ["/poster/1-b93bf8c0-6c30-11ef-95ec-8b48e63e98bb.avif", "/poster/2-ba7f4e30-6c30-11ef-95ec-8b48e63e98bb.avif","/poster/3-b9f73270-6c30-11ef-b7c6-e32e4945e313.avif","/poster/4-bb13c600-6c30-11ef-938e-3573cc141990.avif","/poster/5-baf45720-6c30-11ef-bb77-b3f6f9d1a8a9.avif","/poster/6-ba9c9a30-6c30-11ef-8165-49ab427cc19b.avif"]  // Paths to posters
   },
@@ -27,7 +29,9 @@ const movieDetails = {
       { name:"ralph-ineson",image:"/cast/The-Fantestic4/ralph-ineson-8688cf67-3510-4cdf-b9cd-42d6d4b0a22f.avif"},
       { name:"Vanessa-Kirby",image:"/cast/The-Fantestic4/Vanessa-Kirby.avif"},
     ],
-    trailer: "/trailers/revolution-trailer.mp4",
+    trailers: [
+      { type: "youtube", url: "https://www.youtube.com/embed/18QQWa5MEcs" }
+    ],
     genres: "Drama, War",
     posters: ["/poster/TheFantestic4/1-3cb52b40-66c2-11f0-b49e-0daac2dae3b7.avif", "/poster/TheFantestic4/2-3cbe7a10-66c2-11f0-860b-0123967fd46d.avif","/poster/TheFantestic4/3-3cba0d40-66c2-11f0-b49e-0daac2dae3b7.avif" ,"/poster/TheFantestic4/4-3cb1cfe0-66c2-11f0-860b-0123967fd46d.avif"]
   },
@@ -37,8 +41,10 @@ const movieDetails = {
       { name: "Adithay Raj Sharama", image: "/cast/Mahavatar Narsimha/Mahavatar Narsimha -3c7ccf00-75dd-11f0-bf18-ef07befd2b97.webp" },
       
     ],
-    trailer: "/trailers/revolution-trailer.mp4",
-    genres: "Drama, War",
+    trailers: [
+      { type: "youtube", url: "https://www.youtube.com/embed/p7eE_dn9u4k" }
+    ],
+    genres: "Action",
     posters: ["/poster/Mahavatar-Narsimha/1_Mahavatar-Narsimha_Poster-03658790-580d-11f0-8c69-e1cfd333c047.avif", "/poster/Mahavatar-Narsimha/2_Mahavatar-Narsimha_Poster-03719580-580d-11f0-b03a-f9f12779d145.avif","/poster/Mahavatar-Narsimha/3_Mahavatar-Narsimha_Poster-03747bb0-580d-11f0-8c69-e1cfd333c047.avif","/poster/Mahavatar-Narsimha4_Mahavatar-Narsimha_Poster-03739150-580d-11f0-8c69-e1cfd333c047.avif"]
   },
   4: {
@@ -52,7 +58,9 @@ const movieDetails = {
       {name: "Kerry-Condon",  image:"/cast/Kerry-Condon.avif"},
       {name: "Kim Bodnia",  image:"/cast/Kim Bodnia-c34f9fb0-308e-11f0-bc9c-3bf58d8d4fbd.avif"}
     ],
-    trailer: "/trailers/revolution-trailer.mp4",
+    trailers: [
+    { type: "youtube", url: "https://www.youtube.com/embed/5nyOgE-qEpQ" }
+    ],
     genres: "Action,Sports",
     posters: ["/poster/1-3b3471c0-41ee-11f0-aa9f-8fefdb33bbbf.avif", "/poster/2-3b33ae70-41ee-11f0-aa9f-8fefdb33bbbf.avif","/poster/gallery_0000_F23-3b2e7e50-41ee-11f0-aa9f-8fefdb33bbbf.avif","/poster/gallery_0001_F13-3b29c360-41ee-11f0-aa9f-8fefdb33bbbf.avif"]
   },
@@ -67,19 +75,28 @@ const movieDetails = {
       { name: "jr-ntr", image: "/cast/war/jr-ntr.avif" },
       { name: "Sathyaraj", image: "/cast/war/K. C. Shankar -2df854d0-7a7f-11f0-8df3-db01d1baa444.avif" }
     ],
-    trailer: "/trailers/coolie-trailer.mp4", // Path to the trailer
-    genres: "Action, Thriller",  // Genres of the movie
-    posters: ["/poster/War/WAR2_Poster-e318ca10-6225-11f0-a47d-892349f87030.avif"]  // Paths to posters
+    trailers: [
+     { type: "youtube", url: "https://www.youtube.com/embed/mjBym9uKth4" }
+    ],
+    genres: "Action, Thriller",  
+    posters: ["/poster/War/WAR2_Poster-e318ca10-6225-11f0-a47d-892349f87030.avif"]  
   },
   
   6: {
-    synopsis: "A gripping story about a political revolution set in a war-torn country.",
+    synopsis: "A youthful woman uncovers mystical skills while facing personal hurdles. Meanwhile, as evil surfaces, she must embrace her powers and fate in a shifting world.",
     cast: [
-      { name: "Actor A", image: "/images/actor-a.jpg" },
-      { name: "Actor B", image: "/images/actor-b.jpg" }
+      { name: "Arun Kurian", image: "/cast/chapter1/Arun Kurian-41fb0610-7ccf-11f0-ba94-21e32c33647b.jpg" },
+      { name: "CHANDU SALIM KUMAR", image: "/cast/chapter1/CHANDU_SALIM_KUMAR_204-5173e2a0-d71c-11ef-bcea-9b5651b70e44.jpg" },
+      { name: "Dominic Arun", image: "/cast/chapter1/Dominic Arun -c0811a30-833f-11f0-b51f-25082d062fce.jpg" },
+      { name: "dul", image: "/cast/chapter1/dul-89351b30-3c60-11ee-a713-17bae8dca55b.jpg" },
+      { name: "Kalyani Priyadarshan", image: "/cast/chapter1/Kalyani-Priyadarshan.jpg" },
+      { name: "Naslen", image: "/cast/chapter1/Naslen-7d9e4580-9b78-11ef-9be2-eb12f4c0f7ad.jpg" },
+      { name: "Sandy", image: "/cast/chapter1/Sandy-226343a0-e39f-11ee-b37f-29404991a0ba.jpg" },
     ],
-    trailer: "/trailers/revolution-trailer.mp4",
-    genres: "Drama, War",
+    trailers: [
+     { type: "youtube", url: "https://www.youtube.com/embed/64XHtNWTB5o" }
+    ],
+    genres: "Action, Comedy, Fantasy",
     posters: ["/images/poster3.jpg", "/images/poster4.jpg"]
   },
   7: {
@@ -90,7 +107,7 @@ const movieDetails = {
     ],
     trailer: "/trailers/revolution-trailer.mp4",
     genres: "Drama, War",
-    posters: ["/images/poster3.jpg", "/images/poster4.jpg"]
+    posters: ["/poster/chapter1/Lokah-2-galery-daace1f0-7dae-11f0-9d64-d583fa05badb.jpg", "/poster/chapter1/Lokah1---galery-daaf2be0-7dae-11f0-a04d-a9abeee7b589.jpg","/poster/chapter1/Lokah3-galery-dab2d560-7dae-11f0-9d64-d583fa05badb.jpg"]
   },
   8: {
     synopsis: "Zora Bennett leads a team of skilled operatives to the most dangerous place on Earth, an island research facility for the original Jurassic Park. Their mission is to secure genetic material from dinosaurs whose DNA can provide life-saving benefits to mankind. As the top-secret expedition becomes more and more risky, they soon make a sinister, shocking discovery that's been hidden from the world for decades.",

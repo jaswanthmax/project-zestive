@@ -1,18 +1,63 @@
+/* Define Light and Dark Theme */
+:root {
+  /* Light Theme Colors */
+  --bg-color-light: #ffffff;
+  --text-color-light: #111;
+  --seat-bg-light: #ddd;
+  --seat-hover-light: #bbb;
+  --seat-available-light: #4CAF50;
+  --seat-selected-light: #FFD700;
+  --seat-booked-light: #f44336;
+  --button-bg-light: #f44336;
+  --button-text-light: #fff;
+
+  /* Dark Theme Colors */
+  --bg-color-dark: #1e1e1e;
+  --text-color-dark: #fff;
+  --seat-bg-dark: #444;
+  --seat-hover-dark: #555;
+  --seat-available-dark: #4CAF50;
+  --seat-selected-dark: #FFD700;
+  --seat-booked-dark: #f44336;
+  --button-bg-dark: #f44336;
+  --button-text-dark: #fff;
+}
+
+/* Apply light theme */
+[data-theme="light"] {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+[data-theme="dark"] {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Seat Selection Container */
 .seat-selection-container {
   padding: 20px;
   text-align: center;
+  background-color: var(--bg-color-light); /* Default to light theme */
 }
 
+[data-theme="dark"] .seat-selection-container {
+  background-color: var(--bg-color-dark); /* Dark theme */
+}
+
+/* Seats Grid */
 .seats-grid {
   display: inline-block;
   margin: 20px 0;
 }
 
+/* Seat Row */
 .seat-row {
   display: flex;
   justify-content: center;
 }
 
+/* Seat Styles */
 .seat {
   width: 40px;
   height: 40px;
@@ -22,26 +67,57 @@
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  transition: background 0.3s ease;
 }
 
+/* Seat States - Available, Selected, Booked */
 .seat.available {
-  background-color: #4CAF50; /* green */
+  background-color: var(--seat-available-light); /* Default to light theme */
   color: white;
 }
 
+[data-theme="dark"] .seat.available {
+  background-color: var(--seat-available-dark); /* Dark theme */
+}
+
 .seat.selected {
-  background-color: #FFD700; /* yellow */
+  background-color: var(--seat-selected-light); /* Default to light theme */
+  color: black;
+}
+
+[data-theme="dark"] .seat.selected {
+  background-color: var(--seat-selected-dark); /* Dark theme */
   color: black;
 }
 
 .seat.booked {
-  background-color: #f44336; /* red */
+  background-color: var(--seat-booked-light); /* Default to light theme */
   color: white;
   cursor: not-allowed;
 }
 
+[data-theme="dark"] .seat.booked {
+  background-color: var(--seat-booked-dark); /* Dark theme */
+  color: white;
+}
+
+/* Button Styles */
 .book-btn {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  background-color: var(--button-bg-light); /* Default to light theme */
+  color: var(--button-text-light); /* Default to light theme */
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .book-btn {
+  background-color: var(--button-bg-dark); /* Dark theme */
+  color: var(--button-text-dark); /* Dark theme */
+}
+
+.book-btn:hover {
+  opacity: 0.9;
 }
